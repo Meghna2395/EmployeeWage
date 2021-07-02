@@ -1,23 +1,80 @@
 public class EmployeeWage{
 
-     public static final int Part_Time = 1;
-            public static final int Full_Time = 2;
-            public static final int Rate_Per_hour = 20;
-             public static void main(String args[]){
- int empHrs = 0;
-  int empWage = 0;
-int empCheck = (int) Math.floor(Math.random() * 10) % 3;
-switch (empCheck) {
-case Part_Time :
-empHrs = 4;
+public static final int parttime=1;
+
+public static final int fulltime=2;
+
+public static final int emprateperhour=20;
+
+public static final int noofworkingdays=2;
+
+public static final int maxhrsinmonth=10;
+
+
+
+public static void main(String[] args)
+ 
+
+
+{
+
+
+
+int emphrs=0;
+
+
+int totalemphrs=0;
+
+
+int totalworkingdays=0;
+
+
+while (totalemphrs <= maxhrsinmonth && totalworkingdays < noofworkingdays)
+
+{
+
+totalworkingdays++;
+
+
+int empCheck=(int) Math.floor(Math.random()*10)%3;
+
+
+
+switch(empCheck)
+
+{
+
+case parttime:
+
+emphrs=4;
+
 break;
-case  Full_Time:
-empHrs = 8;
+
+case fulltime:
+
+emphrs=8;
+
 break;
+
 default:
-empHrs = 0;
+
+emphrs=0;
+
 }
-empWage = empHrs *  Rate_Per_hour;
-System.out.println("Emp Wage: " + empWage);
+
+totalemphrs += emphrs;
+
+System.out.println("Day#: " + totalworkingdays + "Emphr: " +emphrs);
+
 }
-} 
+
+
+int totalempwage = totalemphrs*emprateperhour;
+
+System.out.println("Total Emp Wage: " +totalempwage);
+
+
+}
+
+}
+
