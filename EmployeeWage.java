@@ -1,77 +1,52 @@
-public class EmployeeWage{
+public class EmployeeWage {
+    public static final int parttime= 1;
+    public static final int fulltime=2;
 
-public static final int parttime=1;
+    private final String company;
+    private final int empRatePerHour;
+    private  final int numOfWorkingDays;
+    private int totalEmpWage;
 
-public static final int fulltime=2;
+public EmployeeWage(String company, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth){
 
+     this.company = company;
+     this.empRatePerHour = numOfWorkingDays;
+     this.maxHoursPerMonth = maxHoursPerMonth;
+}
 
-public static int computeEmpWage(String company, int emprateperhour, int numofworkingdays, int maxhoursperMonth)
-
- 
-
-
-{
-
-
-
-int emphrs=0;
-
-
-int totalemphrs=0;
-
-
-int totalworkingdays=0;
-
-
-while (totalemphrs <= maxhourspermonth && totalworkingdays < noofworkingdays);
-
-{
-
-totalworkingdays++;
-
-
-int empCheck=(int) Math.floor(Math.random()*10)%3;
-
-
-
-switch(empCheck)
-
-{
-
+public void computeEmpWage(){
+  int empHrs = 0, totalEmpHrs = 0 , totalWorkingDays =0;
+while(totalEmpHrs <= maxHoursPerMonth && 
+                totalWorkingDays < numOfWorkingDays){
+  totalWorkingDays++;
+int  empCheck = (int) Math.floor(Math.random() * 10)% 3;
+switch (empCheck){
 case parttime:
-
-emphrs=4;
-
+ empHrs = 4;
 break;
-
 case fulltime:
-
-emphrs=8;
-
-break;
-
+ empHrs = 8;
 default:
-
-emphrs=0;
-
+   empHrs = 0;
 }
 
-totalemphrs += emphrs;
-
-System.out.println("Day#: " + totalworkingdays + "Emp hr: " +emphrs);
-
+totalEmpHrs += empHrs;
+System.out.println("Day#:" + totalWorkingDays + "Emp Hr: " + empHrs);
+}
+totalEmpWage = totalEmpHrs * empRatePerHour;
 }
 
-
-int totalEmpWage = totalemphrs*emprateperhour;
-
-System.out.println("Total Emp Wage for company: " +company+" is: "+totalEmpWage);
-
+public String toString(){
+   return "Total Emp Wage for Company: "+company+" is: "+ totalEmpWage;
 }
+
 public static void main (String[] args){
-computeEmpWage("Atos",20,5,10);
-computeEmpWage("Wipro",10,8,30);
+ EmployeeWage atos = new EmployeeWage("Atos",20,5,40);
+ EmployeeWage wipro = new EmployeeWage("wipro",10,4,20);
+System.out.println(atos);
+wipro.computeEmpWage();
+System.out.println("wipro");
+  }
 }
 
-}
 
