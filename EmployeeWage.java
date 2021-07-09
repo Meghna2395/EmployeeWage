@@ -12,7 +12,7 @@ public static final int maxhrsinmonth=10;
 
 
 
-public static void main(String[] args)
+public static int computeEmpWage()
  
 
 
@@ -72,8 +72,12 @@ System.out.println("Day#: " + totalworkingdays + "Emphr: " +emphrs);
 int totalempwage = totalemphrs*emprateperhour;
 
 System.out.println("Total Emp Wage: " +totalempwage);
+return totalempwage;
 
 
+}
+public static void main (String[] args){
+computeEmpWage();
 }
 
 }
