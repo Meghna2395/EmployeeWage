@@ -4,15 +4,9 @@ public static final int parttime=1;
 
 public static final int fulltime=2;
 
-public static final int emprateperhour=20;
 
-public static final int noofworkingdays=2;
+public static int computeEmpWage(String company, int emprateperhour, int numofworkingdays, int maxhoursperMonth)
 
-public static final int maxhrsinmonth=10;
-
-
-
-public static int computeEmpWage()
  
 
 
@@ -29,7 +23,7 @@ int totalemphrs=0;
 int totalworkingdays=0;
 
 
-while (totalemphrs <= maxhrsinmonth && totalworkingdays < noofworkingdays)
+while (totalemphrs <= maxhourspermonth && totalworkingdays < noofworkingdays);
 
 {
 
@@ -64,20 +58,19 @@ emphrs=0;
 
 totalemphrs += emphrs;
 
-System.out.println("Day#: " + totalworkingdays + "Emphr: " +emphrs);
+System.out.println("Day#: " + totalworkingdays + "Emp hr: " +emphrs);
 
 }
 
 
-int totalempwage = totalemphrs*emprateperhour;
+int totalEmpWage = totalemphrs*emprateperhour;
 
-System.out.println("Total Emp Wage: " +totalempwage);
-return totalempwage;
-
+System.out.println("Total Emp Wage for company: " +company+" is: "+totalEmpWage);
 
 }
 public static void main (String[] args){
-computeEmpWage();
+computeEmpWage("Atos",20,5,10);
+computeEmpWage("Wipro",10,8,30);
 }
 
 }
